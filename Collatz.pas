@@ -5,8 +5,18 @@ program Collatz;
 uses
   SysUtils;
 
+function NextCollatz(x: integer): integer;
+begin
+    if x mod 2 = 0 then
+      x := x div 2
+    else
+      x := 3 * x + 1;
+    Result := x;
+end;
+
 var
   n: integer;
+  
 
 begin
   if ParamCount <> 1 then
@@ -28,11 +38,7 @@ begin
   while n <> 1 do
   begin
     WriteLn(n);
-
-    if n mod 2 = 0 then
-      n := n div 2
-    else
-      n := 3 * n + 1;
+    n := NextCollatz(n);
   end;
 
   WriteLn(n);
