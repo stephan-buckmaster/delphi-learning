@@ -1,0 +1,4 @@
+*.o
+*.ppu
+TestRunner
+TestRunner.o
