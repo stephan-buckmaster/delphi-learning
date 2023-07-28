@@ -2,14 +2,17 @@ program CollatzRunner;
 
 uses Collatz;
 
+VAR nInput: String;
+VAR nCode: Integer; // Code of parsing integer
 VAR n: Integer; // Don't overdo it
 VAR count: Integer; // Don't overdo it
 
 BEGIN
   WRITE('Enter number:');
-  readLn(n);
+  readLn(nInput);
+  Val(nInput, n, nCode); // Parse to int
   
-  if n < 1 then
+  if (nCode <> 0) or (n < 1) then
   BEGIN
     writeLn('Need number greater than one.');
     halt(1);
