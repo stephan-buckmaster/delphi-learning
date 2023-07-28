@@ -1,4 +1,4 @@
 *.o
 *.ppu
 TestRunner
-TestRunner.o
+CollatzRunner
